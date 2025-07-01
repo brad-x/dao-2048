@@ -28,6 +28,12 @@ securityContext: {}
   # runAsNonRoot: true
   # runAsUser: 1000
 
+## Ingress properties
+ingress:
+  className: nginx
+  host: 2048.brad-x.net
+
+
 ## Service properties
 ##
 service:
@@ -40,11 +46,6 @@ service:
   ##
   ports:
     http: 80
-
-ingress:
-  className: nginx
-  host: 2048.brad-x.net
-
 
   ##
   ## @param service.nodePorts [object] Specify the nodePort(s) value(s) for the LoadBalancer and NodePort service types.

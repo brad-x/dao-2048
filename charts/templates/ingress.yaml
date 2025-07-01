@@ -1,17 +1,18 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-name: {{ include "dao-2048.fullname" . }}
+  name: {{ include "dao-2048.fullname" . }}
+  namespace: {{ .Release.namespace }}
 spec:
-ingressClassName: {{ .Values.ingress.className }}
-rules:
-  - host: {{ .Values.ingress.host }}
-    http:
-        paths:
-        - path: /
-        pathType: Prefix
-        backend:
-            service:
-            name: {{ include "dao-2048.fullname" . }}
-            port:
-                number: {{ .Values.service.ports.http }}
+  ingressClassName: {{ .Values.ingress.className }}
+  rules:
+    - host: {{ .Values.ingress.host }}
+      http:
+          paths:
+          - path: /
+          pathType: Prefix
+          backend:
+              service:
+              name: {{ include "dao-2048.fullname" . }}
+              port:
+                  number: {{ .Values.service.ports.http }}

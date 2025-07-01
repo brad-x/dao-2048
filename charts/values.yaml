@@ -41,6 +41,11 @@ service:
   ports:
     http: 80
 
+ingress:
+  className: nginx
+  host: 2048.brad-x.net
+
+
   ##
   ## @param service.nodePorts [object] Specify the nodePort(s) value(s) for the LoadBalancer and NodePort service types.
   ## ref: https://kubernetes.io/docs/concepts/services-networking/service/#type-nodeport

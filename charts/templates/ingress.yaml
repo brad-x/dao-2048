@@ -13,6 +13,6 @@ spec:
             pathType: Prefix
             backend:
               service:
-              name: {{ include "dao-2048.fullname" . }}
-              port:
-                number: {{ .Values.service.ports.http }}
+                name: {{ include "dao-2048.fullname" . }}
+                port:
+                  number: {{ .Values.service.ports.http }}
